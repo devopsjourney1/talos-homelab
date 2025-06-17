@@ -16,3 +16,5 @@ spec:
       valueFiles:
         - values.yaml
       ignoreMissingValueFiles: true
+  syncPolicy:
+    automated: {}
