@@ -1,0 +1,22 @@
+{{- range $appName, $appConfig := .Values.apps }}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ $appName }}
+  namespace: {{ $appConfig.namespace | default $appName }}
+spec:
+  destination:
+    namespace: argocd
+    server: {{ $.Values.destination.server | default "https://kubernetes.default.svc" }}
+  project: {{ $appConfig.project | default "default" }}
+  source:
+    repoURL: {{ $.Values.repoUrl}}
+    targetRevision: {{ $appConfig.targetRevision | default "HEAD" }}
+    path: {{ $.Values.chartPath }}/{{ $appName }}
+    helm:
+      valueFiles:
+        - values.yaml
+      ignoreMissingValueFiles: true
+  syncPolicy:
+    automated: {}
+{{- end }}
