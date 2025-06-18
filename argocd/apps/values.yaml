@@ -1,5 +1,5 @@
 ---
-chartPath: argocd/apps
+chartPath: argocd/charts
 repoUrl: https://github.com/devopsjourney1/talos-homelab.git
 destination:
   server: https://kubernetes.default.svc
