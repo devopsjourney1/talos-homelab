@@ -8,4 +8,5 @@ apps:
   argocd:
     project: argocd
   cilium: {}
-  coredns: {}
+  coredns:
+    namespace: kube-system
