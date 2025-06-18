@@ -10,3 +10,7 @@ apps:
   cilium: {}
   coredns:
     namespace: kube-system
+  argo-rollouts: {}
+  kube-prometheus-stack:
+    namespace: monitoring
+  velero: {}
