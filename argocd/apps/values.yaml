@@ -14,3 +14,4 @@ apps:
   kube-prometheus-stack:
     namespace: monitoring
   velero: {}
+  portainer: {}
