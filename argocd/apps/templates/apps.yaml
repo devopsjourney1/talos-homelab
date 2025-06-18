@@ -17,4 +17,7 @@ spec:
       valueFiles:
         - values.yaml
       ignoreMissingValueFiles: true
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
 {{- end }}
