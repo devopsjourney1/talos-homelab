@@ -6,12 +6,12 @@ metadata:
 spec:
   destination:
     namespace: argocd
-    server: https://kubernetes.default.svc
+    server: {{ .Values.destination.server | default "https://kubernetes.default.svc" }}
   project: default
   source:
-    repoURL: 'https://github.com/devopsjourney1/talos-homelab.git'
+    repoURL: {{ .Values.repoUrl}}
     targetRevision: HEAD
-    path: ${chartPath}/argocd
+    path: {{ .Values.chartPath }}/argocd
     helm:
       valueFiles:
         - values.yaml
