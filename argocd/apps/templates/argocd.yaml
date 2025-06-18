@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: 'https://github.com/devopsjourney1/talos-homelab.git'
     targetRevision: HEAD
-    path: argocd/charts/argocd
+    path: ${chartPath}/argocd
     helm:
       valueFiles:
         - values.yaml
