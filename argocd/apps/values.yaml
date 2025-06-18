@@ -5,6 +5,5 @@ destination:
   server: https://kubernetes.default.svc
 
 apps:
-  argocd:
-    project: argocd
+  argocd: {}
   cilium: {}
