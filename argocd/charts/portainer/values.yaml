@@ -1,0 +1,7 @@
+---
+enterpriseEdition:
+  enabled: true
+  image:
+    tag: lts
+tls:
+  force: true
