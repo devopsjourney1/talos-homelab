@@ -20,4 +20,5 @@ spec:
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
+---
 {{- end }}

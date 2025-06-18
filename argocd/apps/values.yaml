@@ -6,3 +6,4 @@ destination:
 
 apps:
   argocd: {}
+  cilium: {}
