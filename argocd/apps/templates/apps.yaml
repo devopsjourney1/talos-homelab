@@ -3,10 +3,10 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: {{ $appName }}
-  namespace: {{ $appConfig.namespace | default $appName }}
+  namespace: argocd
 spec:
   destination:
-    namespace: argocd
+    namespace: {{ $appConfig.namespace | default $appName }}
     server: {{ $.Values.destination.server | default "https://kubernetes.default.svc" }}
   project: {{ $appConfig.project | default "default" }}
   source:
