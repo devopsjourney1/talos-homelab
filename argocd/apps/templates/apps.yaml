@@ -20,6 +20,8 @@ spec:
       valuesObject: |
         {{- if $appConfig.values }}
         {{ toYaml $appConfig.values | nindent 8 }}
+        {{- else }}
+        {}
         {{- end }}
   syncPolicy:
     syncOptions:
