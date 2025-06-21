@@ -13,13 +13,8 @@ apps:
     namespace: kube-system
   argo-rollouts:
     ignoreDifferences:
-     - group: apiextensions.k8s.io/v1
-       name: trafficsplits.split.smi-spec.io
-       kind: CustomResourceDefinition
-       jsonPointers:
-         - /spec/preserveUnknownFields
-     - group: apiextensions.k8s.io/v1
-       name: trafficsplits.split.smi-spec.io
+     - group: apiextensions.k8s.io
+       name: analysisruns.argoproj.io
        kind: CustomResourceDefinition
        jsonPointers:
          - /spec/preserveUnknownFields
