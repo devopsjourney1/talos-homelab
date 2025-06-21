@@ -21,7 +21,19 @@ spec:
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
-  valuesObject:
+  valuesObject: {}
+  {{- if $appConfig.ignoreDifferences }}
+  {{- range $ignoreDiff := $appConfig.ignoreDifferences }}
+  ignoreDifferences:
+    - group: {{ $ignoreDiff.group }}
+      kind: {{ $ignoreDiff.kind }}
+      name: {{ $ignoreDiff.name }}
+      jsonPointers:
+      {{- range $pointer := $ignoreDiff.jsonPointers }}
+      - {{ $pointer }}
+      {{- end }}
+    {{- end }}
+    {{- end }}
 
 ---
 {{- end }}
