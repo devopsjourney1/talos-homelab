@@ -21,7 +21,6 @@ spec:
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
-  valuesObject: {}
   {{- if $appConfig.ignoreDifferences }}
   {{- range $ignoreDiff := $appConfig.ignoreDifferences }}
   ignoreDifferences:
