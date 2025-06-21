@@ -17,12 +17,7 @@ spec:
       valueFiles:
         - values.yaml
       ignoreMissingValueFiles: true
-      valuesObject: |
-        {{- if $appConfig.values }}
-        {{ toYaml $appConfig.values | nindent 8 }}
-        {{- else }}
-        {}
-        {{- end }}
+      valuesObject: {}
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
