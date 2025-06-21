@@ -22,17 +22,8 @@ spec:
     syncOptions:
     - CreateNamespace=true
   {{- if $appConfig.ignoreDifferences }}
-  {{- range $ignoreDiff := $appConfig.ignoreDifferences }}
-  ignoreDifferences:
-    - group: {{ $ignoreDiff.group }}
-      kind: {{ $ignoreDiff.kind }}
-      name: {{ $ignoreDiff.name }}
-      jsonPointers:
-      {{- range $pointer := $ignoreDiff.jsonPointers }}
-      - {{ $pointer }}
-      {{- end }}
-    {{- end }}
-    {{- end }}
+  ignoreDifferences: {{ $appConfig.ignoreDifferences | toYaml | nindent 2 }}
+  {{- end }}
 
 ---
 {{- end }}
