@@ -6,7 +6,7 @@ destination:
 
 apps:
   argocd:
-    project: argocd
+    project: default
   cilium: {}
   coredns:
     namespace: kube-system
