@@ -35,5 +35,8 @@ talosctl gen config devopslab https://192.168.1.88:6443/
 
 ```
 
+# List running processes on a node
+talosctl ps -n 192.168.1.88 --endpoints 192.168.1.88
+talosctl netstat -n 192.168.1.88 --endpoints 192.168.1.88
 
 

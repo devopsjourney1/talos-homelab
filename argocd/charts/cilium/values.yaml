@@ -36,4 +36,4 @@ cilium:
     enabled: true
   externalIPs:
     enabled: true
-  devices: eth+
+  devices: eth0
