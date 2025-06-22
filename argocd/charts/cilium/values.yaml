@@ -37,5 +37,5 @@ cilium:
   externalIPs:
     enabled: true
   k8sClientRateLimit:
-    qps: 1
-    burst: 2
+    qps: 50
+    burst: 100
