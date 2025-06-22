@@ -21,4 +21,5 @@ apps:
     namespace: monitoring
   velero: {}
   portainer: {}
-  metallb: {}
+  metallb:
+    namespace: metallb-system
