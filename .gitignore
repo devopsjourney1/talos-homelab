@@ -1,0 +1,5 @@
+# chart artifacts
+*.tgz
+*.tar.gz
+chart.lock
+chart.lock.json
