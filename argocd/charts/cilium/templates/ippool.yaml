@@ -1,0 +1,21 @@
+---
+apiVersion: cilium.io/v2
+kind: CiliumLoadBalancerIPPool
+metadata:
+  name: pool
+spec:
+  blocks:
+  - cidr: 192.168.1.128/28
+  disabled: false
+---
+apiVersion: "cilium.io/v2alpha1"
+kind: CiliumL2AnnouncementPolicy
+metadata:
+  name: policy1
+spec:
+  serviceSelector:
+    matchLabels:
+      io.cilium.gateway/owning-gateway: my-gateway
+  externalIPs: true
+  loadBalancerIPs: true
+---
