@@ -30,8 +30,8 @@ metadata:
   name: argocd-http-route
   namespace: argocd
 spec:
-  hostnames:
-  - argocd.example.com                     # must match Gateway.listener.hostname
+#  hostnames:
+#  - argocd.example.com                     # must match Gateway.listener.hostname
   parentRefs:
   - name: argocd-gateway                   # same name/namespace as the Gateway above
     sectionName: http-listener             # (selects the HTTP listener by name)
@@ -50,8 +50,8 @@ metadata:
   name: argocd-tls-route
   namespace: argocd
 spec:
-  hostnames:
-  - argocd.example.com
+#  hostnames:
+#  - argocd.example.com
   parentRefs:
   - name: argocd-gateway
     sectionName: tls-listener              # refers to the TLS listener on the Gateway
