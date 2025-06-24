@@ -58,3 +58,15 @@ spec:
   - backendRefs:
     - name: argocd-server
       port: 443
+---
+apiVersion: "cilium.io/v2alpha1"
+kind: CiliumL2AnnouncementPolicy
+metadata:
+  name: policy1
+  namespace: kube-system
+spec:
+  serviceSelector:
+    matchLabels:
+      io.cilium.gateway/owning-gateway: argocd-gateway
+  externalIPs: true
+  loadBalancerIPs: true
