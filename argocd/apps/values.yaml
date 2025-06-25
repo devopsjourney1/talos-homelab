@@ -22,3 +22,5 @@ apps:
   velero: {}
   portainer: {}
   keycloak: {}
+  longhorn:
+    namespace: longhorn-system
