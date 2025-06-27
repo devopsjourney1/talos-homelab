@@ -40,9 +40,9 @@ spec:
         value: /
     backendRefs:
     - name: {{ .Values.serviceName }}      # ArgoCD Server service in the specified namespace
-      port: {{ .Values.backend.http.port }}
+      port: {{ .Values.http.backend.port }}
 ---
-{{- if .Values.backend.tls.enabled }}
+{{- if .Values.tls.enabled }}
 apiVersion: gateway.networking.k8s.io/v1alpha2
 kind: TLSRoute
 metadata:
