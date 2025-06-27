@@ -3,3 +3,14 @@ argo-rollouts:
   dashboard:
     # -- Deploy dashboard server
     enabled: true
+
+cilium-gateways:
+  appName: argo-rollouts
+  fqdn: "argo-rollouts.local"
+  serviceName: "argo-rollouts"
+  http:
+    enabled: true
+    frontend:
+      port: 80
+    backend:
+      port: 3100
