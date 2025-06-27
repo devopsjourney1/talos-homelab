@@ -6,3 +6,14 @@ portainer:
       tag: lts
   tls:
     force: true
+
+cilium-gateways:
+  appName: portainer
+  backend:
+    serviceName: portainer
+    http:
+      port: 9000
+    tls:
+      enabled: true
+      port: 9443
+  fqdn: portainer.local

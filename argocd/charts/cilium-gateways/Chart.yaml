@@ -1,0 +1,6 @@
+apiVersion: v2
+name: cilium-gateways
+description: A Custom Helm chart for creating Cilium Gateways
+type: application
+version: 1.0.0
+appVersion: v1.0.0

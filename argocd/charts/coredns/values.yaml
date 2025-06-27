@@ -1,3 +1,4 @@
+---
 coredns:
   replicaCount: 2
   service:
@@ -7,3 +8,14 @@ coredns:
     ipFamilies:
       - IPv4
     ipFamilyPolicy: SingleStack
+
+cilium-gateways:
+  appName: coredns
+  backend:
+    serviceName: coredns
+    http:
+      port: 53
+    tls:
+      enabled: false
+      port: 53
+  fqdn: coredns.local
