@@ -81,11 +81,12 @@ metadata:
   name: {{ .Values.appName }}
 spec:
   parentRefs:
-    - name: {{ .Values.appName }}
+  - name: {{ .Values.appName }}
+    sectionName: tcp-listener
   rules:
-    - backendRefs:
-        - name: {{ .Values.serviceName }} 
-          port: {{ .Values.tcp.backend.port }}
+  - backendRefs:
+    - name: {{ .Values.serviceName }} 
+      port: {{ .Values.tcp.backend.port }}
 ---
 {{- end }}
 apiVersion: "cilium.io/v2alpha1"
