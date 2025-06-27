@@ -1,3 +1,7 @@
+ippool:
+  cidr: 192.168.1.132/28
+  disabled: false
+
 cilium:
   ipam:
     mode: kubernetes

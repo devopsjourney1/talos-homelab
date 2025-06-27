@@ -1,0 +1,8 @@
+apiVersion: cilium.io/v2
+kind: CiliumLoadBalancerIPPool
+metadata:
+  name: pool
+spec:
+  blocks:
+  - cidr: {{ .Values.ippool.cidr }}
+  disabled: {{ .Values.ippool.disabled | default false }}
