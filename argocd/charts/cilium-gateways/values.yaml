@@ -1,10 +1,16 @@
 ---
 appName: "my-app"
 fqdn: ""                    # Fully Qualified Domain Name for the application
-backend:
-  serviceName: "my-service"  # Name of the service to route traffic to
-  http:
-    port: 80                  # HTTP port of the service
-  tls:
-    enabled: true              # Enable TLS routing
-    port: 443                  # TLS port of the service
+serviceName: "my-service"  # Name of the service to route traffic to  
+http:
+  enabled: true
+  frontend:
+    port: 80
+  backend:
+    port: 80
+tls:
+  enabled: false
+  frontend:
+    port: 443
+  backend:
+    port: 443

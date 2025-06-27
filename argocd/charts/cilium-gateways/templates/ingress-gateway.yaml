@@ -8,14 +8,14 @@ spec:
   listeners:
   - name: http-listener
     protocol: HTTP
-    port: {{ .Values.backend.http.port }}
+    port: {{ .Values.http.frontend.port }}
     #hostname: {{ .Values.fqdn }}
     allowedRoutes:
       namespaces:
         from: Same
   - name: tls-listener
     protocol: TLS
-    port: {{ .Values.backend.tls.port }}
+    port: {{ .Values.tls.frontend.port }}
     #hostname: {{ .Values.fqdn }}
     tls:
       mode: Passthrough                       # Allow end-to-end TLS (Gateway does not terminate)
@@ -39,7 +39,7 @@ spec:
         type: PathPrefix
         value: /
     backendRefs:
-    - name: {{ .Values.backend.serviceName }}      # ArgoCD Server service in the specified namespace
+    - name: {{ .Values.serviceName }}      # ArgoCD Server service in the specified namespace
       port: {{ .Values.backend.http.port }}
 ---
 {{- if .Values.backend.tls.enabled }}
@@ -55,8 +55,8 @@ spec:
     sectionName: tls-listener              # refers to the TLS listener on the Gateway
   rules:
   - backendRefs:
-    - name: {{ .Values.backend.serviceName }}      # ArgoCD Server service in the specified namespace
-      port: {{ .Values.backend.tls.port }}
+    - name: {{ .Values.serviceName }}      # ArgoCD Server service in the specified namespace
+      port: {{ .Values.tls.backend.port }}
 ---
 {{- end }}
 apiVersion: "cilium.io/v2alpha1"
