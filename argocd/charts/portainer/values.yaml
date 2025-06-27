@@ -18,7 +18,7 @@ cilium-gateways:
     backend:
       port: 9000
   tls:
-    enabled: false
+    enabled: true
     frontend:
       port: 443
     backend:
