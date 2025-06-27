@@ -1,0 +1,17 @@
+---
+cilium-gateways:
+  appName: argocd
+  fqdn: "argocd.local"
+  serviceName: "argocd-server"
+  http:
+    enabled: true
+    frontend:
+      port: 80
+    backend:
+      port: 80
+  tls:
+    enabled: true
+    frontend:
+      port: 443
+    backend:
+      port: 443
