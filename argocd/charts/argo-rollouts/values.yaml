@@ -1,3 +1,5 @@
-dashboard:
-  # -- Deploy dashboard server
-  enabled: true
+---
+argo-rollouts:
+  dashboard:
+    # -- Deploy dashboard server
+    enabled: true
