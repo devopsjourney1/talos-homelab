@@ -8,6 +8,6 @@ dependencies:
   - name: coredns
     version: 1.42.4
     repository: https://coredns.github.io/helm
-  # - name: cilium-gateways
-  #   version: 1.0.0
-  #   repository: file://../cilium-gateways
+  - name: cilium-gateways
+    version: 1.0.0
+    repository: file://../cilium-gateways

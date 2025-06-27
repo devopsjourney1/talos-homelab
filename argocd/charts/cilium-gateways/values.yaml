@@ -14,3 +14,9 @@ tls:
     port: 443
   backend:
     port: 443
+tcp:
+  enabled: false
+  frontend:
+    port: 8080
+  backend:
+    port: 8080

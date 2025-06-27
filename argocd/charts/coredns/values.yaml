@@ -10,12 +10,16 @@ coredns:
     ipFamilyPolicy: SingleStack
 
 cilium-gateways:
-  appName: coredns
-  backend:
-    serviceName: coredns
-    http:
+  appName: "coredns"
+  fqdn: "coredns.local"
+  serviceName: "coredns"
+  http:
+    enabled: false
+  tls:
+    enabled: false
+  tcp:
+    enabled: true
+    frontend:
       port: 53
-    tls:
-      enabled: false
+    backend:
       port: 53
-  fqdn: coredns.local

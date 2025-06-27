@@ -6,6 +6,7 @@ metadata:
 spec:
   gatewayClassName: cilium
   listeners:
+{{- if .Values.http.enabled }}
   - name: http-listener
     protocol: HTTP
     port: {{ .Values.http.frontend.port }}
@@ -13,6 +14,8 @@ spec:
     allowedRoutes:
       namespaces:
         from: Same
+{{- end}}
+{{- if .Values.http.enabled }}
   - name: tls-listener
     protocol: TLS
     port: {{ .Values.tls.frontend.port }}
@@ -22,7 +25,18 @@ spec:
     allowedRoutes:
       namespaces:
         from: Same
+{{- end}}
+{{- if .Values.tcp.enabled }}
+  - name: tcp-listener
+    protocol: TCP
+    port: {{ .Values.tcp.frontend.port }}
+    #hostname: {{ .Values.fqdn }}
+    allowedRoutes:
+      namespaces:
+        from: Same
+{{- end}}
 ---
+{{- if .Values.http.enabled }}
 apiVersion: gateway.networking.k8s.io/v1beta1
 kind: HTTPRoute
 metadata:
@@ -42,6 +56,7 @@ spec:
     - name: {{ .Values.serviceName }}      # ArgoCD Server service in the specified namespace
       port: {{ .Values.http.backend.port }}
 ---
+{{- end }}
 {{- if .Values.tls.enabled }}
 apiVersion: gateway.networking.k8s.io/v1alpha2
 kind: TLSRoute
@@ -57,6 +72,20 @@ spec:
   - backendRefs:
     - name: {{ .Values.serviceName }}      # ArgoCD Server service in the specified namespace
       port: {{ .Values.tls.backend.port }}
+---
+{{- end }}
+{{- if .Values.tcp.enabled }}
+apiVersion: gateway.networking.k8s.io/v1
+kind: TCPRoute
+metadata:
+  name: {{ .Values.appName }}
+spec:
+  parentRefs:
+    - name: {{ .Values.appName }}
+  rules:
+    - backendRefs:
+        - name: {{ .Values.serviceName }} 
+          port: {{ .Values.tcp.backend.port }}
 ---
 {{- end }}
 apiVersion: "cilium.io/v2alpha1"
