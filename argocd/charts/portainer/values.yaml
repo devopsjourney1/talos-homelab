@@ -18,7 +18,7 @@ cilium-gateways-ui:
     backend:
       port: 9443
 cilium-gateways-tunnel:
-  appName: portainer-tunenl
+  appName: portainer-tunnel
   fqdn: "portainer.local"
   serviceName: "portainer"
   tcp:
