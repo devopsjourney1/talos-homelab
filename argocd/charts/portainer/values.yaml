@@ -7,7 +7,7 @@ portainer:
   tls:
     force: true
 
-cilium-gateways:
+cilium-gateways-ui:
   appName: portainer
   fqdn: "portainer.local"
   serviceName: "portainer"
@@ -17,7 +17,7 @@ cilium-gateways:
       port: 443
     backend:
       port: 9443
-cilium-gateways:
+cilium-gateways-tunnel:
   appName: portainer-tunenl
   fqdn: "portainer.local"
   serviceName: "portainer"
