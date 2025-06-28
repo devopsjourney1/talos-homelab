@@ -21,7 +21,7 @@ cilium-gateways-tunnel:
   appName: portainer-tunenl
   fqdn: "portainer.local"
   serviceName: "portainer"
-  http:
+  tcp:
     enabled: true
     frontend:
       port: 8000
