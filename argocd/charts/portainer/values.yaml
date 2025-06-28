@@ -11,12 +11,6 @@ cilium-gateways:
   appName: portainer
   fqdn: "portainer.local"
   serviceName: "portainer"
-  http:
-    enabled: true
-    frontend:
-      port: 80
-    backend:
-      port: 9000
   tls:
     enabled: true
     frontend:
