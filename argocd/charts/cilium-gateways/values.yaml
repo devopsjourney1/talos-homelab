@@ -3,7 +3,7 @@ appName: "my-app"
 fqdn: ""                    # Fully Qualified Domain Name for the application
 serviceName: "my-service"  # Name of the service to route traffic to  
 http:
-  enabled: true
+  enabled: false
   frontend:
     port: 80
   backend:
