@@ -1,0 +1,15 @@
+---
+cert-manager:
+  crds:
+    enabled: true
+
+cilium-gateways:
+  appName: cert-manager
+  fqdn: "cert-manager.local"
+  serviceName: "cert-manager"
+  http:
+    enabled: true
+    frontend:
+      port: 80
+    backend:
+      port: 80

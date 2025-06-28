@@ -1,0 +1,13 @@
+apiVersion: v2
+name: keycloak
+description: A Helm chart for Keycloak
+type: application
+version: 1.0.0
+appVersion: v1.0.0
+dependencies:
+  - name: cert-manager
+    version: 1.18.1
+    repository: https://charts.jetstack.io
+  - name: cilium-gateways
+    version: 1.0.0
+    repository: file://../cilium-gateways
