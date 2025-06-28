@@ -7,7 +7,7 @@ argo-rollouts:
 cilium-gateways:
   appName: argo-rollouts
   fqdn: "argo-rollouts.local"
-  serviceName: "argo-rollouts"
+  serviceName: "argo-rollouts-dashboard"
   http:
     enabled: true
     frontend:

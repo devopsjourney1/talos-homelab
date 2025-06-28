@@ -1,3 +1,7 @@
+ippool:
+  cidr: 192.168.1.132/28
+  disabled: false
+
 cilium:
   ipam:
     mode: kubernetes
@@ -39,3 +43,35 @@ cilium:
   k8sClientRateLimit:
     qps: 50
     burst: 100
+
+  hubble:
+    enabled: true
+    metrics:
+      enabled:
+        - dns
+        - drop
+        - tcp
+        - flow
+        - icmp
+        - http
+    ui:
+      enabled: true
+    relay:
+      enabled: true
+
+cilium-gateways:
+  appName: hubble
+  fqdn: "hubble.local"
+  serviceName: "hubble-ui"
+  http:
+    enabled: true
+    frontend:
+      port: 80
+    backend:
+      port: 80
+
+  # certManager:
+  #   enabled: true
+  #   issuer:
+  #     name: cilium-ca
+  #     kind: ClusterIssuer
