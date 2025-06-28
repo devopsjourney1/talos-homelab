@@ -1,8 +1,8 @@
 ---
 cilium-gateways:
-  appName: portainer
-  fqdn: "portainer.local"
-  serviceName: "portainer"
+  appName: keycloak
+  fqdn: "keycloak.local"
+  serviceName: "keycloak"
   http:
     enabled: true
     frontend:
