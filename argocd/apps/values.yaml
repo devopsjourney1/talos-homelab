@@ -22,6 +22,7 @@ apps:
   velero: {}
   portainer: {}
   keycloak: {}
+  cert-manager: {}
   longhorn:
     namespace: longhorn-system
     ignoreDifferences:
