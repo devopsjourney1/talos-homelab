@@ -8,3 +8,6 @@ dependencies:
   - name: keycloak
     version: 24.7.4
     repository: https://charts.bitnami.com/bitnami
+  - name: cilium-gateways
+    version: 1.0.0
+    repository: file://../cilium-gateways
