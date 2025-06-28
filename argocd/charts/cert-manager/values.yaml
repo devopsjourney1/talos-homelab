@@ -2,6 +2,8 @@
 cert-manager:
   crds:
     enabled: true
+  config:
+    enableGatewayAPI: true
 
 cilium-gateways:
   appName: cert-manager
