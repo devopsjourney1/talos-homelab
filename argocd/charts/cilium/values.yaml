@@ -58,3 +58,20 @@ cilium:
       enabled: true
     relay:
       enabled: true
+
+cilium-gateways:
+  appName: hubble
+  fqdn: "hubble.local"
+  serviceName: "hubble-ui"
+  http:
+    enabled: true
+    frontend:
+      port: 80
+    backend:
+      port: 80
+
+  # certManager:
+  #   enabled: true
+  #   issuer:
+  #     name: cilium-ca
+  #     kind: ClusterIssuer
