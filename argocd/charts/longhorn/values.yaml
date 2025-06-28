@@ -1,0 +1,10 @@
+cilium-gateways:
+  appName: longhorn
+  fqdn: "longhorn.local"
+  serviceName: "longhorn-frontend"
+  http:
+    enabled: true
+    frontend:
+      port: 80
+    backend:
+      port: 80
