@@ -17,3 +17,13 @@ cilium-gateways:
       port: 443
     backend:
       port: 9443
+cilium-gateways:
+  appName: portainer-tunenl
+  fqdn: "portainer.local"
+  serviceName: "portainer"
+  tls:
+    enabled: true
+    frontend:
+      port: 8000
+    backend:
+      port: 30776

@@ -9,5 +9,10 @@ dependencies:
     version: 1.0.66
     repository: https://portainer.github.io/k8s/
   - name: cilium-gateways
+    alias: cilium-gateways-ui
+    version: 1.0.0
+    repository: file://../cilium-gateways
+  - name: cilium-gateways
+    alias: cilium-gateways-tunnel
     version: 1.0.0
     repository: file://../cilium-gateways
