@@ -31,3 +31,9 @@ argocd app create apps \
 ```
 argocd account update-password --account <new-account-name> --current-password <admin-password> --new-password <new-account-password>
 ```
+
+
+## Get List of Gateway IP's
+```
+kubectl get gateway -A -o custom-columns=NAME:.metadata.name,ADDRESS:.status.addresses[0].value
+```
