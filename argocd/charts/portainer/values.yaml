@@ -3,7 +3,8 @@ portainer:
   enterpriseEdition:
     enabled: true
     image:
-      tag: lts
+      repository: portainerci/portainer-ee
+      tag: develop
   tls:
     force: true
 
