@@ -1,0 +1,27 @@
+---
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+networking:
+  apiServerAddress: "192.168.1.78"
+  apiServerPort: 6443
+nodes:
+  - role: control-plane
+    kubeadmConfigPatches:
+      - |
+        kind: ClusterConfiguration
+        apiServer:
+          certSANs:
+            - "192.168.1.78"
+    image: kindest/node:v1.33.1
+    extraPortMappings:
+      - containerPort: 6443
+        hostPort: 6443
+        listenAddress: "0.0.0.0"
+        protocol: TCP
+  - role: worker
+    image: kindest/node:v1.33.1
+    extraPortMappings:
+      - containerPort: 31552
+        hostPort: 31552
+        listenAddress: "0.0.0.0"
+        protocol: TCP
